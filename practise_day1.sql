@@ -269,11 +269,32 @@ order by
 -- | Just Kids                                           | Smith          |
 -- | Cannery Row                                         | Steinbeck      |
 -- +-----------------------------------------------------+----------------+
+select
+    concat(
+        'My favourite author is ',
+        author_fname,
+        ' ',
+        author_lname,
+        ' !!'
+    ) as yell
+from
+    books
+order by
+    author_lname;
 
+select
+    concat(
+        'My favourite author is ',
+        ucase(author_fname),
+        ' ',
+        ucase(author_lname),
+        ' !!'
+    ) as yell
+from
+    books
+order by
+    author_lname;
 
-
-select concat('My favourite author is ', author_fname,' ',author_lname,' !!') as yell from books order by author_lname;
-select concat('My favourite author is ', ucase(author_fname),' ',ucase(author_lname),' !!') as yell from books order by author_lname;
 -- +------------------------------------------------+
 -- | yell                                           |
 -- +------------------------------------------------+
